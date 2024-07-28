@@ -21,9 +21,15 @@ function initMap() {
     };
     const marker = new google.maps.marker.AdvancedMarkerElement(markerOptions);
 
-    // Add InfoWindow
+    // Add InfoWindow with image
+    const infoWindowContent = `
+        <div>
+            <img src="Photos/VanWest Partners Dacula.png" alt="VanWest Partners" style="width:50px;height:auto;">
+            <p>VanWest Partners | ClearHome Self Storage Dacula</p>
+        </div>
+    `;
     const infoWindow = new google.maps.InfoWindow({
-        content: 'VanWest Partners | ClearHome Self Storage Dacula'
+        content: infoWindowContent
     });
     infoWindow.open(map, marker);
 
