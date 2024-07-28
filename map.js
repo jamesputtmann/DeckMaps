@@ -1,3 +1,11 @@
+function loadMap() {
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCqE2bW7hClGL8yd-OpkOPsTd-Oqymud9U&callback=initMap&libraries=marker&v=beta&map_ids=b3539bbfec43ea22`;
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+}
+
 function initMap() {
     const center = { lat: 34.00493516456416, lng: -83.92118813558204 };
     const map = new google.maps.Map(document.getElementById('map'), {
