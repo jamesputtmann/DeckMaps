@@ -13,6 +13,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
     - name: Create public directory
       run: mkdir -p public
 
@@ -30,4 +35,3 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
-        publish_branch: gh-pages  # Specify the gh-pages branch for deployment
