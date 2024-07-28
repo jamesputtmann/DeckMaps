@@ -23,7 +23,7 @@ function initMap() {
 
     // Add InfoWindow with image
     const infoWindowContent = `
-        <div>
+        <div style="font-family: 'Gil Sans'; font-weight: bold;">
             <img src="Photos/VanWest Partners Dacula.png" alt="VanWest Partners" style="width:200px;height:auto;">
             <p>VanWest Partners | ClearHome Self Storage Dacula</p>
         </div>
