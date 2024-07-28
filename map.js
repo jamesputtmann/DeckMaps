@@ -11,7 +11,7 @@ function initMap() {
     const map = new google.maps.Map(document.getElementById('map'), {
         center: center,
         zoom: 12,
-        mapId: 'b3539bbfec43ea22' // Replace 'YOUR_MAP_ID' with your actual Map ID
+        mapId: 'YOUR_MAP_ID' // Replace 'YOUR_MAP_ID' with your actual Map ID
     });
 
     const markerOptions = {

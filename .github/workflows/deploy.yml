@@ -11,12 +11,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '16'
 
     - name: Create public directory
       run: mkdir -p public
@@ -25,8 +25,10 @@ jobs:
       run: |
         find . -maxdepth 1 ! -name public ! -name . -exec cp -r {} public/ \;
 
-    - name: Replace API key in map.js
-      run: sed -i "s/YOUR_API_KEY/${{ secrets.GOOGLE_MAPS_API_KEY }}/g" public/map.js
+    - name: Replace API key and Map ID in map.js
+      run: |
+        sed -i "s/YOUR_API_KEY/${{ secrets.GOOGLE_MAPS_API_KEY }}/g" public/map.js
+        sed -i "s/YOUR_MAP_ID/${{ secrets.GOOGLE_MAPS_MAP_ID }}/g" public/map.js
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
