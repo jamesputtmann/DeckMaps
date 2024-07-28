@@ -1,7 +1,8 @@
 function loadMap() {
     const script = document.createElement('script');
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=marker&v=beta';
+    script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=marker&v=beta&map_ids=YOUR_MAP_ID`;
     script.async = true;
+    script.defer = true;
     document.head.appendChild(script);
 }
 
@@ -9,7 +10,8 @@ function initMap() {
     const center = { lat: 34.00493516456416, lng: -83.92118813558204 };
     const map = new google.maps.Map(document.getElementById('map'), {
         center: center,
-        zoom: 12
+        zoom: 12,
+        mapId: 'YOUR_MAP_ID' // Replace 'YOUR_MAP_ID' with your actual Map ID
     });
 
     const markerOptions = {
