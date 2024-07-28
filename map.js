@@ -10,8 +10,8 @@ function initMap() {
     const center = { lat: 34.00493516456416, lng: -83.92118813558204 };
     const map = new google.maps.Map(document.getElementById('map'), {
         center: center,
-        zoom: 12,
-        mapId: 'YOUR_MAP_ID' // Replace 'YOUR_MAP_ID' with your actual Map ID
+        zoom: 10,
+        mapId: 'YOUR_MAP_ID'
     });
 
     const markerOptions = {
@@ -46,16 +46,17 @@ function initMap() {
         strokeOpacity: 0.5,
         strokeWeight: 2
     });
+
     const circle25Miles = new google.maps.Circle({
         map: map,
         center: center,
         radius: radius25Miles,
-        fillColor: '#66c2ff', // Light blue color
-        fillOpacity: 0.15, // Transparency effect
-        strokeColor: '#00183c', // Dark blue border (same as 3-mile circle color)
-        strokeOpacity: 1, // Solid border
+        fillColor: '#66c2ff',
+        fillOpacity: 0.15,
+        strokeColor: '#00183c',
+        strokeOpacity: 1,
         strokeWeight: 2
-      });
+    });
 }
 
 document.addEventListener('DOMContentLoaded', loadMap);
